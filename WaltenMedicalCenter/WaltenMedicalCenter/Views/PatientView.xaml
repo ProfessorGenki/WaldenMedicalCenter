@@ -45,10 +45,23 @@
         <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="144,82,0,0" Grid.Row="2" TextWrapping="Wrap" PlaceholderText="Insert Address" VerticalAlignment="Top" Width="250"/>
         <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="144,132,0,0" Grid.Row="2" TextWrapping="Wrap" PlaceholderText="Ex: +45 12 34 56 78" VerticalAlignment="Top" Width="250"/>
         <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="144,180,0,0" Grid.Row="2" TextWrapping="Wrap" PlaceholderText="12-23-45-XXXX" VerticalAlignment="Top" Width="250"/>
-        <ToggleSwitch Grid.Column="1" Header="Is Insurred" HorizontalAlignment="Left" Margin="45,221,0,252" Grid.Row="2" VerticalAlignment="Stretch" OffContent="No" OnContent="Yes" d:LayoutOverrides="Width, Height, TopPosition, BottomPosition" Width="89"/>
+        <!-- Credit Card -->
+        <TextBlock Name="CreditTextBlock" Grid.Column="1" HorizontalAlignment="Left" Margin="45,233,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Credit" VerticalAlignment="Top" Height="36" FontSize="20"/>
+        <TextBox Name="CreditTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="144,233,0,0" Grid.Row="2" TextWrapping="Wrap" PlaceholderText="XXXX-XXXX-XXXX-XXXX" VerticalAlignment="Top" Width="250"/>
+        
+        <!-- Insurrance Toggle -->
+        <ToggleSwitch Grid.Column="1" Header="Is Insurred" HorizontalAlignment="Left" Margin="45,289,0,184" Grid.Row="2" VerticalAlignment="Stretch" OffContent="No" OnContent="Yes" Width="89" Toggled="ToggleSwitch_OnToggled"/>
+
+        <!-- Insurrance Tabs -->
+        <TextBlock Name="ProviderTextBlock" Grid.Column="1" HorizontalAlignment="Left" Margin="45,354,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Provider" VerticalAlignment="Top" Height="36" FontSize="20" Visibility="Collapsed"/>
+        <TextBlock Name="CoverageTextBlock" Grid.Column="1" HorizontalAlignment="Left" Margin="43,395,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Coverage" VerticalAlignment="Top" Height="36" FontSize="20" Visibility="Collapsed"/>
+        <TextBox Name="ProviderTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="144,354,0,0" Grid.Row="2" TextWrapping="Wrap" PlaceholderText="Insert Insurrance Provider" VerticalAlignment="Top" Width="250" Visibility="Collapsed"/>
+        <TextBox Name="CoverageTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="144,399,0,0" Grid.Row="2" TextWrapping="Wrap" PlaceholderText="Type of Coverage" VerticalAlignment="Top" Width="250" Visibility="Collapsed"/>
 
         <!-- Register Button -->
-        <Button Content="Register" Grid.Column="1" Margin="45,0,0,108" Grid.Row="2" VerticalAlignment="Bottom" Width="89"/>
+        <Button Content="Register" Grid.Column="1" Margin="45,0,0,40" Grid.Row="2" VerticalAlignment="Bottom" Width="89"/>
+
+
 
 
     </Grid>
