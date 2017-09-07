@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using WaltenMedicalCenter.Views;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -22,35 +23,15 @@ namespace WaltenMedicalCenter
     /// </summary>
     public sealed partial class PatientView : Page
     {
-        private bool isVisible = false;
 
         public PatientView()
         {
             this.InitializeComponent();
         }
 
-        private void ToggleSwitch_OnToggled(object sender, RoutedEventArgs e)
+        private void RegisterPatientViewClick(object sender, RoutedEventArgs e)
         {
-            if (!isVisible)
-            {
-                isVisible = true;
-                CreditTextBlock.Visibility = Visibility.Collapsed;
-                CreditTextBox.Visibility = Visibility.Collapsed;
-                ProviderTextBlock.Visibility = Visibility.Visible;
-                ProviderTextBox.Visibility = Visibility.Visible;
-                CoverageTextBlock.Visibility = Visibility.Visible;
-                CoverageTextBox.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                isVisible = false;
-                CreditTextBlock.Visibility = Visibility.Visible;
-                CreditTextBox.Visibility = Visibility.Visible;
-                ProviderTextBlock.Visibility = Visibility.Collapsed;
-                ProviderTextBox.Visibility = Visibility.Collapsed;
-                CoverageTextBlock.Visibility = Visibility.Collapsed;
-                CoverageTextBox.Visibility = Visibility.Collapsed;
-            }
+            this.Frame.Navigate(typeof(RegisterPatientView), null);
         }
 
     }
