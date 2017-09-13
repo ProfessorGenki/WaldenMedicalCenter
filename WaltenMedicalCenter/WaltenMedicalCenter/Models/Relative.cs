@@ -9,5 +9,13 @@
         private string _relationship;
 
         #endregion
+
+
+        public Relative(string rName, string rPhone, string relationship)
+        {
+            _rName = rName;
+            _rPhone = rPhone;
+            _relationship = relationship;
+        }
     }
 }

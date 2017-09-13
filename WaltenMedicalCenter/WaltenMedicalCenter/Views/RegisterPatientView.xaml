@@ -3,10 +3,13 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:WaltenMedicalCenter.Views"
+    xmlns:mv="using:WaltenMedicalCenter.ViewModels"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
+    <Page.DataContext>
+        <mv:RegisterPatientViewModel></mv:RegisterPatientViewModel>
+    </Page.DataContext>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="0.5*"/>
@@ -19,8 +22,10 @@
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
 
-        <!-- Titlebar + Logo -->
 
+
+
+        <!-- Titlebar + Logo -->
         <Image  x:Name="Logo" HorizontalAlignment="Left" Height="100" Source="../Assets/walden_logo.png" Margin="39,35,0,0" VerticalAlignment="Top" Width="100" />
         <TextBlock  x:Name="TitleBar" HorizontalAlignment="Left" Margin="164,76,-134,0" TextWrapping="Wrap" Text="Walden Medical Center" VerticalAlignment="Top" FontSize="36" FontWeight="Bold" Width="397"/>
 
@@ -33,36 +38,29 @@
         <Button Grid.Column="0" Content="Register Patient" Margin="39,32,203,0" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Stretch" d:LayoutOverrides="LeftPosition, RightPosition"/>
         <Button Grid.Column="0" Content="View Patient" Margin="39,89,203,0" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Stretch" d:LayoutOverrides="LeftPosition, RightPosition"/>
 
+        <!-- Check Insurance -->
+        <TextBlock Grid.Column="1" x:Name="tbx" TextWrapping="Wrap" FontSize="22" Text="Check Insurance Plan" Margin="42,14,0,486" Grid.Row="2" Width="250" HorizontalAlignment="Left" d:LayoutOverrides="Width, TopPosition, BottomPosition"/>
+        <TextBlock Grid.Column="1" x:Name="textBlock" TextWrapping="Wrap"  Text="CPR"  Width="77" Margin="45,53,731,449" Grid.Row="2" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox Grid.Column="1" x:Name="textBox" Text="{Binding Provider, Mode=TwoWay}"  Width="129" Margin="141,89,583,412" Grid.Row="2" Height="32" HorizontalAlignment="Left" VerticalAlignment="Top"  />
+        <TextBlock Grid.Column="1" x:Name="textBlock1" TextWrapping="Wrap" Padding="1,0,0,0" Text="Provider"  Width="77" Margin="45,89,731,412" Grid.Row="2" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox Grid.Column="1" x:Name="textBox1" Text="{Binding SSN, Mode=TwoWay}"  TextWrapping="Wrap"   Width="129" Margin="141,52,583,449" Grid.Row="2" Height="32" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="1" Grid.Row="2" x:Name="textBlock01" TextWrapping="Wrap" Padding="1,0,0,0" Text="ValidUntil"  Width="77" Height="23" Margin="42,135,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" d:LayoutOverrides="Width"/>
+        <TextBox Grid.Column="1" Grid.Row="2" x:Name="textBox01" Text="{Binding  ValidUntil, Mode=TwoWay}"  Width="129" Height="10" Margin="141,126,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" d:LayoutOverrides="Width"/>
+        <Button Grid.Column="1" x:Name="button2" Content="Check Insurance"  Command="{Binding CheckInsurancePatientCommand}" Grid.Row="2" Width="131" Margin="45,177,0,0" VerticalAlignment="Top" Height="32"/>
+
         <!-- TextBlocks for Fields -->
-        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="45,32,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Height="36" FontSize="20"/>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="45,82,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Address" VerticalAlignment="Top" Height="36" FontSize="20" RenderTransformOrigin="0.512,0.88"/>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="45,132,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Phone" VerticalAlignment="Top" Height="36" FontSize="20" RenderTransformOrigin="0.511,1.226"/>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="45,180,0,0" Grid.Row="2" TextWrapping="Wrap" Text="SSN" VerticalAlignment="Top" Height="36" FontSize="20"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="42,232,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Height="36" FontSize="20"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="42,282,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Address" VerticalAlignment="Top" Height="36" FontSize="20" RenderTransformOrigin="0.512,0.88"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="42,332,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Age" VerticalAlignment="Top" Height="36" FontSize="20" RenderTransformOrigin="0.511,1.226"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="42,380,0,0" Grid.Row="2" TextWrapping="Wrap" Text="SSN" VerticalAlignment="Top" Height="36" FontSize="20"/>
 
         <!-- TextBoxes for user input -->
-        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="144,32,0,0" Grid.Row="2" TextWrapping="Wrap" PlaceholderText="Insert Name" VerticalAlignment="Top" Width="250"/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="144,82,0,0" Grid.Row="2" TextWrapping="Wrap" PlaceholderText="Insert Address" VerticalAlignment="Top" Width="250"/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="144,132,0,0" Grid.Row="2" TextWrapping="Wrap" PlaceholderText="Ex: +45 12 34 56 78" VerticalAlignment="Top" Width="250"/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="144,180,0,0" Grid.Row="2" TextWrapping="Wrap" PlaceholderText="12-23-45-XXXX" VerticalAlignment="Top" Width="250"/>
-        <!-- Credit Card -->
-        <TextBlock Name="CreditTextBlock" Grid.Column="1" HorizontalAlignment="Left" Margin="45,233,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Credit" VerticalAlignment="Top" Height="36" FontSize="20"/>
-        <TextBox Name="CreditTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="144,233,0,0" Grid.Row="2" TextWrapping="Wrap" PlaceholderText="XXXX-XXXX-XXXX-XXXX" VerticalAlignment="Top" Width="250"/>
-
-        <!-- Insurrance Toggle -->
-        <ToggleSwitch Grid.Column="1" Header="Is Insurred" HorizontalAlignment="Left" Margin="45,289,0,184" Grid.Row="2" VerticalAlignment="Stretch" OffContent="No" OnContent="Yes" Width="89" Toggled="ToggleSwitch_OnToggled"/>
-
-        <!-- Insurrance Tabs -->
-        <TextBlock Name="ProviderTextBlock" Grid.Column="1" HorizontalAlignment="Left" Margin="45,354,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Provider" VerticalAlignment="Top" Height="36" FontSize="20" Visibility="Collapsed"/>
-        <TextBlock Name="CoverageTextBlock" Grid.Column="1" HorizontalAlignment="Left" Margin="43,395,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Coverage" VerticalAlignment="Top" Height="36" FontSize="20" Visibility="Collapsed"/>
-        <TextBox Name="ProviderTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="144,354,0,0" Grid.Row="2" TextWrapping="Wrap" PlaceholderText="Insert Insurrance Provider" VerticalAlignment="Top" Width="250" Visibility="Collapsed"/>
-        <TextBox Name="CoverageTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="144,399,0,0" Grid.Row="2" TextWrapping="Wrap" PlaceholderText="Type of Coverage" VerticalAlignment="Top" Width="250" Visibility="Collapsed"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="141,232,0,0" Grid.Row="2" TextWrapping="Wrap" Text="{Binding Name, Mode=TwoWay}" PlaceholderText="Insert Name" VerticalAlignment="Top" Width="250"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="141,282,0,0" Grid.Row="2" TextWrapping="Wrap" Text="{Binding Address, Mode=TwoWay}" PlaceholderText="Insert Address" VerticalAlignment="Top" Width="250"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="141,332,0,0" Grid.Row="2" TextWrapping="Wrap" Text="{Binding Age, Mode=TwoWay}" PlaceholderText="Ex: 22" VerticalAlignment="Top" Width="250"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="141,380,0,0" Grid.Row="2" TextWrapping="Wrap" Text="{Binding SSN, Mode=TwoWay}" PlaceholderText="Ex: 1234563056" VerticalAlignment="Top" Width="250"/>
 
         <!-- Register Button -->
-        <Button Content="Register" Grid.Column="1" Margin="45,0,0,40" Grid.Row="2" VerticalAlignment="Bottom" Width="89"/>
-
-
-
-
-
+        <Button Content="Register" Grid.Column="1" Margin="45,0,0,40" Grid.Row="2"  Command="{Binding RegisterNewPatientCommand}" VerticalAlignment="Bottom" Width="89"/>
     </Grid>
 </Page>

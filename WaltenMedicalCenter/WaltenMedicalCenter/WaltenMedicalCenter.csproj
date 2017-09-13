@@ -95,18 +95,20 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Command\RelayCommand.cs" />
+    <Compile Include="InsurancePlanService\InsurancePlan.cs" />
+    <Compile Include="InsurancePlanService\InsurancePlanSystem.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\HospitalCard.cs" />
-    <Compile Include="Models\HospitalCardCatalog.cs" />
+    <Compile Include="Persistency\HospitalCardCatalog.cs" />
     <Compile Include="Models\Patient.cs" />
-    <Compile Include="Models\PatientCatalog.cs" />
+    <Compile Include="Persistency\PatientCatalog.cs" />
     <Compile Include="Models\Relative.cs" />
-    <Compile Include="Models\RelativeCatalog.cs" />
-    <Compile Include="Services\InsurancePlan.cs" />
-    <Compile Include="Services\InsurancePlanSystem.cs" />
+    <Compile Include="Persistency\RelativeCatalog.cs" />
     <Compile Include="ViewModels\RegisterPatientViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Views\PatientView.xaml.cs">
       <DependentUpon>PatientView.xaml</DependentUpon>
     </Compile>
