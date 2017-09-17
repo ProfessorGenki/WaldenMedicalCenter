@@ -26,5 +26,10 @@ namespace WaltenMedicalCenter.Views
         {
             this.InitializeComponent();
         }
+
+        private void textBlock01_Copy2_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

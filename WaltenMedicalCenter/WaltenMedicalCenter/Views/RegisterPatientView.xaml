@@ -35,32 +35,59 @@
         <Button Grid.Column="0" Grid.Row="1" Content="Billing" Margin="410,7,0,7" FontSize="20" Grid.ColumnSpan="2"/>
 
         <!-- Patient View -->
-        <Button Grid.Column="0" Content="Register Patient" Margin="39,32,203,0" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Stretch" d:LayoutOverrides="LeftPosition, RightPosition"/>
-        <Button Grid.Column="0" Content="View Patient" Margin="39,89,203,0" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Stretch" d:LayoutOverrides="LeftPosition, RightPosition"/>
+        <Button Grid.Column="0" Content="Register Patient" Margin="39,32,0,0" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Left" Width="168"/>
 
         <!-- Check Insurance -->
-        <TextBlock Grid.Column="1" x:Name="tbx" TextWrapping="Wrap" FontSize="22" Text="Check Insurance Plan" Margin="42,14,0,486" Grid.Row="2" Width="250" HorizontalAlignment="Left" d:LayoutOverrides="Width, TopPosition, BottomPosition"/>
-        <TextBlock Grid.Column="1" x:Name="textBlock" TextWrapping="Wrap"  Text="CPR"  Width="77" Margin="45,53,731,449" Grid.Row="2" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <TextBox Grid.Column="1" x:Name="textBox" Text="{Binding Provider, Mode=TwoWay}"  Width="129" Margin="141,89,583,412" Grid.Row="2" Height="32" HorizontalAlignment="Left" VerticalAlignment="Top"  />
-        <TextBlock Grid.Column="1" x:Name="textBlock1" TextWrapping="Wrap" Padding="1,0,0,0" Text="Provider"  Width="77" Margin="45,89,731,412" Grid.Row="2" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <TextBox Grid.Column="1" x:Name="textBox1" Text="{Binding SSN, Mode=TwoWay}"  TextWrapping="Wrap"   Width="129" Margin="141,52,583,449" Grid.Row="2" Height="32" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <TextBlock Grid.Column="1" Grid.Row="2" x:Name="textBlock01" TextWrapping="Wrap" Padding="1,0,0,0" Text="ValidUntil"  Width="77" Height="23" Margin="42,135,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" d:LayoutOverrides="Width"/>
-        <TextBox Grid.Column="1" Grid.Row="2" x:Name="textBox01" Text="{Binding  ValidUntil, Mode=TwoWay}"  Width="129" Height="10" Margin="141,126,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" d:LayoutOverrides="Width"/>
-        <Button Grid.Column="1" x:Name="button2" Content="Check Insurance"  Command="{Binding CheckInsurancePatientCommand}" Grid.Row="2" Width="131" Margin="45,177,0,0" VerticalAlignment="Top" Height="32"/>
+        <TextBlock Grid.Column="1" x:Name="tbx" TextWrapping="Wrap" FontSize="12" Text="Check Insurance Plan" Margin="154,19,0,485" Grid.Row="2" Width="215" HorizontalAlignment="Left" FontWeight="Bold" FontStyle="Italic"/>
+        <TextBlock Grid.Column="1" x:Name="textBlock" TextWrapping="Wrap"  Text="CPR"  Width="33" Margin="116,62,0,0" Grid.Row="2" Height="18" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12"/>
+        <TextBox Grid.Column="1" x:Name="textBox" Text="{Binding Provider, Mode=TwoWay}"  Width="111" Margin="154,84,0,0" Grid.Row="2" Height="27" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12"  />
+        <TextBlock Grid.Column="1" x:Name="textBlock1" TextWrapping="Wrap" Padding="1,0,0,0" Text="Provider"  Width="51" Margin="98,92,0,0" Grid.Row="2" Height="18" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12"/>
+        <TextBox Grid.Column="1" x:Name="textBox1" Text="{Binding SSN, Mode=TwoWay}"  TextWrapping="Wrap"   Width="111" Margin="154,52,0,0" Grid.Row="2" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12"/>
+        <TextBlock Grid.Column="1" Grid.Row="2" x:Name="textBlock01" TextWrapping="Wrap" Padding="1,0,0,0" Text="ValidUntil"  Width="61" Height="19" Margin="91,116,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="12"/>
+        <TextBox Grid.Column="1" Grid.Row="2" x:Name="textBox01" Text="{Binding  ValidUntil, Mode=TwoWay}"  Width="111" Height="27" Margin="154,116,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="12"/>
+        <Button Grid.Column="1" x:Name="button2" Content="Check Insurance"  Command="{Binding CheckInsurancePatientCommand}" Grid.Row="2" Width="113" Margin="156,159,0,0" VerticalAlignment="Top" Height="28" FontSize="12"/>
 
         <!-- TextBlocks for Fields -->
-        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="42,232,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Height="36" FontSize="20"/>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="42,282,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Address" VerticalAlignment="Top" Height="36" FontSize="20" RenderTransformOrigin="0.512,0.88"/>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="42,332,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Age" VerticalAlignment="Top" Height="36" FontSize="20" RenderTransformOrigin="0.511,1.226"/>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="42,380,0,0" Grid.Row="2" TextWrapping="Wrap" Text="SSN" VerticalAlignment="Top" Height="36" FontSize="20"/>
-
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="125,201,0,0" Grid.Row="2" TextWrapping="Wrap" Text="SSN" VerticalAlignment="Top" Height="27" FontSize="12" Width="24"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="109,233,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Height="27" FontSize="12" RenderTransformOrigin="0.512,0.88" Width="40"/>
+        <TextBlock Grid.Column="1" Margin="101,260,704,0" Grid.Row="2" TextWrapping="Wrap" Text="Address" VerticalAlignment="Top" Height="28" FontSize="12" RenderTransformOrigin="0.511,1.226"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="119,288,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Age" VerticalAlignment="Top" Height="27" FontSize="12" Width="30"/>
+        <TextBlock Margin="59,317,704,0" Grid.Row="2" TextWrapping="Wrap" Text="Relative's Name" VerticalAlignment="Top" Height="27" FontSize="12" Grid.Column="1"/>
+        <TextBlock Margin="59,350,704,0" Grid.Row="2" TextWrapping="Wrap" Text="Relative's Phone" VerticalAlignment="Top" Height="28" FontSize="12" Grid.Column="1"/>
+        <TextBlock Grid.Column="1" Margin="78,384,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Relation" VerticalAlignment="Top" Height="27" FontSize="12" HorizontalAlignment="Left" Width="66"/>
         <!-- TextBoxes for user input -->
-        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="141,232,0,0" Grid.Row="2" TextWrapping="Wrap" Text="{Binding Name, Mode=TwoWay}" PlaceholderText="Insert Name" VerticalAlignment="Top" Width="250"/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="141,282,0,0" Grid.Row="2" TextWrapping="Wrap" Text="{Binding Address, Mode=TwoWay}" PlaceholderText="Insert Address" VerticalAlignment="Top" Width="250"/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="141,332,0,0" Grid.Row="2" TextWrapping="Wrap" Text="{Binding Age, Mode=TwoWay}" PlaceholderText="Ex: 22" VerticalAlignment="Top" Width="250"/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="141,380,0,0" Grid.Row="2" TextWrapping="Wrap" Text="{Binding SSN, Mode=TwoWay}" PlaceholderText="Ex: 1234563056" VerticalAlignment="Top" Width="250"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="156,199,0,0" Grid.Row="2" TextWrapping="Wrap" Text="{Binding SSN, Mode=TwoWay}" PlaceholderText="Ex: 0304942013" VerticalAlignment="Top" Width="146" Height="28" FontSize="12"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="156,231,0,0" Grid.Row="2" TextWrapping="Wrap" Text="{Binding Name, Mode=TwoWay}" PlaceholderText="Insert Name" VerticalAlignment="Top" Width="146" Height="27" FontSize="12"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="156,260,0,0" Grid.Row="2" TextWrapping="Wrap" Text="{Binding Address, Mode=TwoWay}" PlaceholderText="Ex: Elisagårdsvej 5" VerticalAlignment="Top" Width="146" Height="28" FontSize="12"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="156,288,0,0" Grid.Row="2" TextWrapping="Wrap" Text="{Binding Age, Mode=TwoWay}" PlaceholderText="Ex: 22" VerticalAlignment="Top" Width="146" Height="27" FontSize="12"/>
+        <TextBox Grid.Column="1" Margin="156,319,0,0" Grid.Row="2" TextWrapping="Wrap" Text="{Binding RName, Mode=TwoWay}" PlaceholderText="Ex: Allan" VerticalAlignment="Top" HorizontalAlignment="Left" Width="146" Height="28" FontSize="12"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="156,351,0,0" Grid.Row="2" TextWrapping="Wrap" Text="{Binding RPhone, Mode=TwoWay}" PlaceholderText="Ex: 30 03 29 83" VerticalAlignment="Top" Width="146" Height="28" FontSize="12"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="156,384,0,0" Grid.Row="2" TextWrapping="Wrap" Text="{Binding Relation, Mode=TwoWay}" PlaceholderText="Ex: Father" VerticalAlignment="Top" Width="146" Height="27" FontSize="12"/>
+
+        <!-- Show Patient -->
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="492,33,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Registered Patient" VerticalAlignment="Top" Height="31" FontSize="12" Width="230" FontWeight="Bold" FontStyle="Italic"/>
 
         <!-- Register Button -->
-        <Button Content="Register" Grid.Column="1" Margin="45,0,0,40" Grid.Row="2"  Command="{Binding RegisterNewPatientCommand}" VerticalAlignment="Bottom" Width="89"/>
+        <Button Content="Register New Patient" Grid.Column="1" Margin="156,0,533,45" Grid.Row="2"  Command="{Binding RegisterNewPatientCommand}" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" RenderTransformOrigin="0.982,0.234" Height="28" FontSize="12"/>
+
+        <!-- Check Patient -->
+        <Button Grid.Column="1" x:Name="patientButton" Content="Check Patient"  Command="{Binding CheckPatientCommand}" Grid.Row="2" Width="113" Margin="526,296,0,0" VerticalAlignment="Top" Height="28" FontSize="12"/>
+        <TextBlock Grid.Column="1" x:Name="textBlock_Copy" TextWrapping="Wrap"  Text="SSN"  Width="33" Margin="490,77,0,0" Grid.Row="2" Height="17" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12"/>
+        <TextBox Grid.Column="1" x:Name="textBox_Copy" Text="{Binding Name, Mode=TwoWay}"  Width="111" Margin="528,98,0,0" Grid.Row="2" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12"  />
+        <TextBlock Grid.Column="1" x:Name="textBlock1_Copy" TextWrapping="Wrap" Padding="1,0,0,0" Text="Name"  Width="51" Margin="472,107,0,0" Grid.Row="2" Height="17" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12"/>
+        <TextBox Grid.Column="1" x:Name="textBox1_Copy" Text="{Binding SSN, Mode=TwoWay}"  TextWrapping="Wrap"   Width="111" Margin="528,67,0,0" Grid.Row="2" Height="27" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12"/>
+        <TextBlock Grid.Column="1" Grid.Row="2" x:Name="textBlock01_Copy" TextWrapping="Wrap" Padding="1,0,0,0" Text="Address"  Width="61" Height="20" Margin="467,138,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="12"/>
+        <TextBox Grid.Column="1" Grid.Row="2" x:Name="textBox01_Copy" Text="{Binding Address, Mode=TwoWay}"  Width="111" Height="28" Margin="528,130,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="12"/>
+        <TextBlock Grid.Column="1" Grid.Row="2" x:Name="textBlock01_Copy1" TextWrapping="Wrap" Padding="1,0,0,0" Text="Age"  Width="61" Height="20" Margin="467,165,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="12"/>
+        <TextBox Grid.Column="1" Grid.Row="2" x:Name="textBox01_Copy1" Text="{Binding Age, Mode=TwoWay}"  Width="111" Height="27" Margin="528,158,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="12"/>
+        <TextBlock Grid.Column="1" Grid.Row="2" x:Name="textBlock01_Copy2" TextWrapping="Wrap" Padding="1,0,0,0" Text="Relative's Name"  Width="97" Height="23" Margin="426,194,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" SelectionChanged="textBlock01_Copy2_SelectionChanged" FontSize="12"/>
+        <TextBox Grid.Column="1" Grid.Row="2" x:Name="textBox01_Copy2" Text="{Binding RName, Mode=TwoWay}"  Width="111" Height="27" Margin="528,190,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="12"/>
+        <TextBlock Grid.Column="1" Grid.Row="2" x:Name="textBlock01_Copy3" TextWrapping="Wrap" Padding="1,0,0,0" Text="Relative's Phone"  Width="97" Height="23" Margin="426,226,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" SelectionChanged="textBlock01_Copy2_SelectionChanged" FontSize="12"/>
+        <TextBox Grid.Column="1" Grid.Row="2" x:Name="textBox01_Copy3" Text="{Binding RPhone, Mode=TwoWay}"  Width="111" Height="28" Margin="528,221,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="12"/>
+        <TextBlock Grid.Column="1" Grid.Row="2" x:Name="textBlock01_Copy4" TextWrapping="Wrap" Padding="1,0,0,0" Text="Relationship"  Width="75" Height="24" Margin="448,257,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" SelectionChanged="textBlock01_Copy2_SelectionChanged" FontSize="12"/>
+        <TextBox Grid.Column="1" Grid.Row="2" x:Name="textBox01_Copy4" Text="{Binding Relationship, Mode=TwoWay}"  Width="111" Height="28" Margin="528,253,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="12"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="156,421,0,0" Grid.Row="2" TextWrapping="Wrap" Text="{Binding ValidTo, Mode=TwoWay}" PlaceholderText="Ex: Father" VerticalAlignment="Top" Width="146" Height="27" FontSize="12"/>
+        <TextBlock Grid.Column="1" Margin="78,426,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Valid To" VerticalAlignment="Top" Height="27" FontSize="12" HorizontalAlignment="Left" Width="66"/>
+
     </Grid>
 </Page>
